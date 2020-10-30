@@ -1,0 +1,102 @@
+* {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #f3eded;
+    background-color: #2b2a2a;
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    width: 1000px;
+    margin: 110px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+    opacity: 0;
+}
+
+p, button, input, h2 span {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+input#user-answer, input[type="button"] {
+    border-radius: 5px;
+    margin: 40px 5px 5px 5px;
+}
+
+input#user-answer {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #48928d;
+    background-color: #c9e0df;
+    color: #004d47;
+    padding: 2px 10px;
+}
+
+input[type="button"] {
+    width: 100px;
+    height: 37px;
+    border: 2px solid #c9e0df;
+    background-color: #48928d;
+    transition-duration: 200ms;
+}
+
+input[type="button"]:hover {
+    box-shadow: 0 0 8px 1px #c9e0df;
+    transition-duration: 250ms;
+}
+
+#game-waiting-answer, #game-error-answer, #game-ok-answer {
+    margin: 5px 0;
+}
+
+#game-waiting-answer {
+    color: #eec17d;
+}
+
+#game-error-answer {
+    color: #ff9292;
+}
+
+#game-ok-answer {
+    color: #ccffa9;
+}
+
+#game-final-message {
+    font-size: 1.7rem;
+}
+
+#icons-result {
+    margin: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#icons-result i {
+    font-size: 5rem;
+}
+
+#user-icons-result .fa-hand-scissors {
+    transform: rotate(180deg) scaleY(-1);
+}
+
+#user-icons-result .fa-hand-paper, #user-icons-result .fa-hand-rock {
+    transform: rotate(90deg) ;
+}
+
+#computer-icons-result .fa-hand-paper, #computer-icons-result .fa-hand-rock {
+    transform: rotate(-90deg) scaleX(-1);
+}
