@@ -6,7 +6,7 @@ function runGame() {
     const gameInfo = document.getElementById('game-info');
     const userIcon = document.getElementById('user-icon');
     const computerIcon = document.getElementById('computer-icon');
-    const h2 = document.getElementsByTagName('h2');
+    const gameBoard = document.getElementsByTagName('h2');
     let gameFinalMessage = document.getElementById('game-final-message');
 
     // Traitement du score en cours affiché (str to int)
@@ -34,7 +34,7 @@ function runGame() {
             gameInfo.innerHTML = '<p id="game-ok-answer">OK c\'est parti !</p>';
 
             // Le tableau de jeu apparaît (modifie opacity des h2 à 1)
-            for (value of h2) {
+            for (value of gameBoard) {
                 value.style.opacity = '1';
             }
         }, 1200);
@@ -135,7 +135,18 @@ function runGame() {
             }
         }, 6000);
 
-        // Test des scores
+        // Test des scores : si partie terminée message final
+        setTimeout(function () {
+            if (userScore === 3) {
+                gameFinalMessage.innerHTML = 'Victoire !';
+            }
+
+            if (computerScore === 3) {
+                gameFinalMessage.innerHTML = 'Perdu !';
+            }
+        }, 6000);
+
+        // Puis préviens et relance nouvelle partie
         setTimeout(function () {
             if (userScore === 3) {
                 alert("Bravo à toi ! \nTu as gagné le droit de rejouer !");
@@ -146,7 +157,7 @@ function runGame() {
                 alert("C'est perdu... \nMais ce n'est pas grave car tout ce qui ne tue pas rend plus fort !");
                 document.location.reload();
             }
-        }, 6500);
+        }, 6050);
 
     // Si la réponse de l'utilisateur est vide
     } else if (userAnswer === '') {
