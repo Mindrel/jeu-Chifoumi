@@ -33,7 +33,7 @@ function runGame() {
         setTimeout(function () {
             gameInfo.innerHTML = '<p id="game-ok-answer">OK c\'est parti !</p>';
 
-            // Modifie opacity des h2 à 1
+            // Le tableau de jeu apparaît (modifie opacity des h2 à 1)
             for (value of h2) {
                 value.style.opacity = '1';
             }
@@ -133,18 +133,20 @@ function runGame() {
                         break;
                 }
             }
+        }, 6000);
 
-            // Test des scores 
-            if (userScore === 5) {
+        // Test des scores
+        setTimeout(function () {
+            if (userScore === 3) {
                 alert("Bravo à toi ! \nTu as gagné le droit de rejouer !");
                 document.location.reload();
             }
 
-            if (computerScore === 5) {
+            if (computerScore === 3) {
                 alert("C'est perdu... \nMais ce n'est pas grave car tout ce qui ne tue pas rend plus fort !");
                 document.location.reload();
             }
-        }, 6000);
+        }, 6500);
 
     // Si la réponse de l'utilisateur est vide
     } else if (userAnswer === '') {
